@@ -1,80 +1,63 @@
 # Linux App Manager
 
-A desktop application built with Python, GTK 4 and Libadwaita for managing installed applications on Linux.
+Aplicativo gráfico para Linux desenvolvido em Python, GTK 4 e Libadwaita. Permite visualizar e gerenciar aplicativos instalados por meio de uma interface simples e intuitiva.
 
-Linux App Manager provides a graphical interface to view, launch, stop, export and uninstall applications installed through supported package managers.
+## Funcionalidades
 
-## Features
+- Listagem de aplicativos instalados.
+- Suporte a APT, Flatpak e Snap.
+- Pesquisa de aplicativos.
+- Executar e encerrar aplicativos.
+- Criar atalhos na área de trabalho.
+- Desinstalar aplicativos individualmente ou em lote.
+- Exportar a lista de aplicativos para CSV.
+- Registro de erros e atividades em log.
 
-- List installed applications.
-- Detect packages installed through APT, Flatpak and Snap.
-- Search and filter applications.
-- Launch and stop applications.
-- Create desktop shortcuts.
-- Uninstall individual applications.
-- Uninstall multiple applications with different confirmation modes.
-- Export the application list to CSV.
-- Application logs for troubleshooting.
+## Requisitos
 
-## Supported Package Managers
+- Linux com suporte a GTK 4 e Libadwaita.
+- Python 3.
+- PyGObject.
+- PolicyKit.
+- APT, Flatpak ou Snap.
 
-| Package Manager | Support |
-|---|---|
-| APT | Supported |
-| Flatpak | Supported |
-| Snap | Supported |
+## Instalação
 
-Support for additional package managers may be added in future versions.
+### Executar pelo código-fonte
 
-## Requirements
-
-- Linux
-- Python 3
-- GTK 4
-- Libadwaita
-- PyGObject
-- PolicyKit
-- A supported package manager
-
-## Installation
-
-### Run from source
-
-Install the required dependencies on Debian-based distributions:
+Instale as dependências em distribuições Debian e derivadas:
 
 ```bash
 sudo apt install python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 polkitd
 ```
 
-Run the application:
+Execute:
 
 ```bash
 python3 App.py
 ```
 
-### Build a Debian package
+### Gerar pacote DEB
 
-To generate a `.deb` package, make sure `dpkg-deb` is installed:
+Instale o `dpkg-dev`:
 
 ```bash
 sudo apt install dpkg-dev
 ```
 
-Then run:
+Gere o pacote:
 
 ```bash
 python3 build_deb.py
 ```
 
-The generated package will be available in the project directory.
-
-Install it with:
+Instale o arquivo `.deb` gerado:
 
 ```bash
 sudo apt install ./linuxappmanager_1.0.0_all.deb
 ```
 
-## Project Structure
+## Estrutura do projeto
 
 ```text
 linux-app-manager/
@@ -84,23 +67,16 @@ linux-app-manager/
 └── README.md
 ```
 
-## Compatibility
+## Compatibilidade
 
-The application is designed for Linux desktop environments that support GTK 4 and Libadwaita.
+Desenvolvido para ambientes Linux com GTK 4 e Libadwaita. Atualmente, oferece suporte ao gerenciamento de pacotes APT, Flatpak e Snap.
 
-Package management functionality currently supports APT, Flatpak and Snap. The Debian package builder generates `.deb` packages for Debian-based distributions.
+O instalador DEB é destinado a distribuições Debian e derivadas.
 
-## Contributing
+## Contribuições
 
-Contributions, bug reports and feature suggestions are welcome.
+Sugestões, correções e melhorias são bem-vindas. Abra uma *Issue* ou envie um *Pull Request*.
 
-Feel free to open an issue or submit a pull request.
+## Licença
 
-## License
-
-This project is not yet distributed under a specified license. A license should be added before accepting external contributions or defining reuse permissions.
-
----
-
-**Linux App Manager**  
-A simple graphical application manager for Linux.
+Consulte o arquivo `LICENSE` para informações sobre os termos de uso e distribuição.
